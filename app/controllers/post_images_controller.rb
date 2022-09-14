@@ -22,11 +22,12 @@ class PostImagesController < ApplicationController
     @post_image = PostImage.find(params[id])
     @post_image.delete
     redirect_to post_images_pass
+  end
 
   private
 
   def post_image_params
     params.require(:post_image).permit(:shop_name, :image, :caption)
   end
-
+  
 end
